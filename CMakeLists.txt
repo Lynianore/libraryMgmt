@@ -9,4 +9,8 @@ add_executable(libraryManagement main.cpp
         Book.cpp
         Book.h
         System.cpp
-        System.h)
+        System.h
+        DVD.cpp
+        DVD.h
+        Audiobook.cpp
+        Audiobook.h)

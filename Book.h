@@ -10,7 +10,7 @@ class Book : public Item {
     public:
     //constructor
     Book(std::string, std::string, int, std::string, int);
-    //Prints overview of book ()
+    //Prints overview of book
     void getOverview();
 };
 

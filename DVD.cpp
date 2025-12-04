@@ -1,12 +1,12 @@
 //
-// Created by Lynianore on 18/11/2025.
+// Created by Lynianore on 04/12/2025.
 //
 #include <iostream>
-#include "Book.h"
+#include "DVD.h"
 using namespace std;
 
 //Constructor
-Book::Book(string title, string author, int length, string ID, int copies) : Item(title, author, length, ID, copies) {
+DVD::DVD(string title, string author, int length, string ID, int copies) : Item(title, author, length, ID, copies) {
     this->title = title;
     this->author = author;
     this->length = length;
@@ -15,10 +15,10 @@ Book::Book(string title, string author, int length, string ID, int copies) : Ite
 }
 
 //Prints overview for book
-void Book::getOverview() {
+void DVD::getOverview() {
     cout << endl << "Title: " << title << endl;
-    cout << "Author: " << author << endl;
-    cout << "Length: " << length << " pages" << endl;
+    cout << "Director: " << author << endl;
+    cout << "Length: " << length << " minutes" << endl;
     cout << "Dewey Decimal ID: " << ID << endl;
     cout << "Total copies: " << copies << endl;
     cout << "Available copies: " << copiesAvailable << endl;
