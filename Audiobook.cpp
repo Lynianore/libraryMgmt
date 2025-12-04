@@ -15,7 +15,7 @@ Audiobook::Audiobook(string title, string author, int length, string ID, int cop
     this->copies = copies;
 }
 
-//Prints overview for book
+//Prints overview for audiobook
 void Audiobook::getOverview() {
     cout << endl << "Title: " << title << endl;
     cout << "Read By: " << author << endl;

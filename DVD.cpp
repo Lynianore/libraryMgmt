@@ -14,7 +14,7 @@ DVD::DVD(string title, string author, int length, string ID, int copies) : Item(
     this->copies = copies;
 }
 
-//Prints overview for book
+//Prints overview for DVD
 void DVD::getOverview() {
     cout << endl << "Title: " << title << endl;
     cout << "Director: " << author << endl;

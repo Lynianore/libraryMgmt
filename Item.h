@@ -13,9 +13,6 @@ class Item {
     //Virtual destructor
     virtual ~Item() {};
 
-    //Add num copies of item
-    void addCopies(int num);
-
     //Pure virtual function makes base class abstract
     virtual void getOverview() = 0;
 
@@ -24,6 +21,9 @@ class Item {
 
     //Returns copies available of item
     int getCopiesAvailable();
+
+    //Add num copies of item
+    void addCopies(int num);
 
     protected:
     std::string title;
