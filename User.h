@@ -27,8 +27,10 @@ public:
     //Getter for if user can borrow
     bool canBorrow();
     //Adds item to borrowedItems vector
-    void borrow (Item* item);
+    void borrow(Item* item);
+    void returnItem(const std::string& itemID);
     virtual void addItem(System&, Item*) {};
+    virtual void removeItem(System&, const std::string& itemID) {};
 
     protected:
     std::string name;

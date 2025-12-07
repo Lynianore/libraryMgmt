@@ -23,6 +23,8 @@ int main () {
     staff1->addItem(sys, new Book("Jumping into C++", "Allain, Alex", 516, "005.117", 2));
     //Add dvd to library
     staff2->addItem(sys, new DVD("Citizen Kane", "Welles, Orson", 120, "791.437", 1));
+    //Remove item
+    staff1->removeItem(sys, "791.437");
 
     sys.addUser(new Student("Charlton, Thomas", "S001"));
     sys.addUser(new Student("Hagan, Julius-Joel", "S002"));

@@ -16,6 +16,7 @@ class System {
 
     //Adds Item object pointer to items vector
     void addItem(Item* item);
+    void removeItem(const std::string& id);
     void addUser(User* user);
     //Returns vector of item pointers
     std::vector<Item*>& getItems();

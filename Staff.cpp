@@ -19,5 +19,16 @@ void Staff::addItem(System& system, Item* item) {
     cout << endl << getName() << " added " << item->getTitle() << endl;
     system.addItem(item);
 }
+void Staff::removeItem(System& system, const std::string& itemID) {
+
+    Item* item = system.findItem(itemID);  // store pointer first
+    if (!item) {
+        cout << "\nItem with ID " << itemID << " not found.\n";
+        return;
+    }
+    cout << endl << getName() << " removed " << item->getTitle() << endl;
+    system.removeItem(itemID);
+}
+
 
 

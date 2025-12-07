@@ -20,6 +20,15 @@ void System::addItem(Item* item) {
     items.push_back(item);
 }
 
+void System::removeItem(const string& itemID) {
+    for (auto it = items.begin(); it != items.end(); ++it) {
+        if ((*it)->getID() == itemID) {
+            items.erase(it);
+            return;
+        }
+    }
+}
+
 void System::addUser(User* user) {
     for (auto& us : users) {
         if (us->getName() == user->getName()) {
