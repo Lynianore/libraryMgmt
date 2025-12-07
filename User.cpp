@@ -3,9 +3,7 @@
 //
 
 #include "User.h"
-#include "Item.h"
 
-#include <iostream>
 using namespace std;
 
 User::User(string name, string ID) {
@@ -20,6 +18,10 @@ string User::getName() {
 
 string User::getID() {
     return ID;
+}
+
+vector<Item*>& User::getBorrowedItems() {
+    return borrowedItems;
 }
 
 bool User::canBorrow() {

@@ -1,7 +1,6 @@
 //
 // Created by Lynianore on 04/12/2025.
 //
-#include <iostream>
 #include "DVD.h"
 using namespace std;
 
@@ -16,10 +15,10 @@ DVD::DVD(string title, string author, int length, string ID, int copies) : Item(
 
 //Prints overview for DVD
 void DVD::getOverview() {
-    cout << endl << "Title: " << title << endl;
-    cout << "Director: " << author << endl;
-    cout << "Length: " << length << " minutes" << endl;
-    cout << "Dewey Decimal ID: " << ID << endl;
-    cout << "Total copies: " << copies << endl;
-    cout << "Available copies: " << copiesAvailable << endl;
+    cout << "\nTitle: " << title;
+    cout << "\nDirector: " << author;
+    cout << "\nLength: " << length << " minutes";
+    cout << "\nDewey Decimal ID: " << ID;
+    cout << "\nTotal copies: " << copies;
+    cout << "\nAvailable copies: " << copiesAvailable << endl;
 }

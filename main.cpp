@@ -15,11 +15,5 @@ int main () {
     sys.addItem(new Book("Jumping into C++", "Allain, Alex", 516, "005.117", 2));
     //Add dvd to library
     sys.addItem(new DVD("Citizen Kane", "Welles, Orson", 120, "791.437", 1));
-    //Creates variable so that we can access items
-    vector<Item*>& items = sys.getItems();
-
-    //Runs overview getter for each item in items vector
-    for (int i = 0; i < items.size(); i++) {
-        items[i]->getOverview();
-    }
+    sys.listItems();
 }

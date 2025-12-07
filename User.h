@@ -6,6 +6,7 @@
 #define LIBRARYMANAGEMENT_USER_H
 #include <string>
 #include <vector>
+#include <iostream>
 #include "Item.h"
 
 class User {
@@ -13,25 +14,27 @@ public:
     //constructor
     User(std::string, std::string);
     //virtual destructor
-    virtual ~User();
+    virtual ~User(){};
     //prints overview, pure virtual method makes base class abstract
     virtual void getOverview() = 0;
-
+    //getter for protected variables
     std::string getName();
-
     std::string getID();
-    //getter for if borrowing is possible
-    bool canBorrow();
 
+    std::vector<Item*>& getBorrowedItems();
+
+    //Getter for if user can borrow
+    bool canBorrow();
+    //Adds item to borrowedItems vector
     void borrow (Item* item);
 
     protected:
     std::string name;
     std::string ID;
-    std::vector<Item*> borrowedItems;
+    int borrowLimit;
 
     private:
-    int borrowLimit;
+    std::vector<Item*> borrowedItems;
 };
 
 

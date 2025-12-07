@@ -1,7 +1,6 @@
 //
 // Created by Lynianore on 18/11/2025.
 //
-#include <iostream>
 #include "Book.h"
 using namespace std;
 
@@ -16,10 +15,10 @@ Book::Book(string title, string author, int length, string ID, int copies) : Ite
 
 //Prints overview for book
 void Book::getOverview() {
-    cout << endl << "Title: " << title << endl;
-    cout << "Author: " << author << endl;
-    cout << "Length: " << length << " pages" << endl;
-    cout << "Dewey Decimal ID: " << ID << endl;
-    cout << "Total copies: " << copies << endl;
-    cout << "Available copies: " << copiesAvailable << endl;
+    cout << "\nTitle: " << title;
+    cout << "\nAuthor: " << author;
+    cout << "\nLength: " << length << " pages";
+    cout << "\nDewey Decimal ID: " << ID;
+    cout << "\nTotal copies: " << copies;
+    cout << "\nAvailable copies: " << copiesAvailable << endl;
 }

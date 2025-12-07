@@ -3,7 +3,6 @@
 //
 
 #include "Item.h"
-#include <iostream>
 using namespace std;
 
 //Constructor, defaults for copies and times borrowed are zero, copies available is equivalent to total copies minus copies borrowed
@@ -25,18 +24,27 @@ void Item::addCopies(int num) {
 }
 
 void Item::borrowCopy() {
-    copies--;
+    copiesBorrowed++;
 }
 
 //Returns title
 string Item::getTitle() {
     return title;
 }
+string Item::getAuthor() {
+    return author;
+}
+int Item::getLength() {
+    return length;
+}
 
 string Item::getID() {
     return ID;
 }
 
+int Item::getCopiesTotal() {
+    return copies;
+}
 //Returns copies available
 int Item::getCopiesAvailable() {
     return copiesAvailable;

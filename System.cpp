@@ -3,8 +3,6 @@
 //
 
 #include "System.h"
-#include <vector>
-#include <algorithm>
 using namespace std;
 
 System::System() {}
@@ -15,11 +13,19 @@ void System::addItem(Item* item) {
         if (it->getTitle() == item->getTitle()) {
             it->addCopies(item->getCopiesAvailable());
             delete item;
-            return;
         }
     }
     //If item isn't already pressent simply adds item to vector
     items.push_back(item);
+}
+
+void System::addUser(User* user) {
+    for (auto& us : users) {
+        if (us->getName() == user->getName()) {
+            delete user;
+        }
+    }
+    users.push_back(user);
 }
 
 User* System::findUser(string& id) {
@@ -43,11 +49,11 @@ void System::borrowItem(string& userID, string& itemID) {
     Item* item = findItem(itemID);
 
     if (!user || !item) {
-        cout << endl << "Item or user does not exist." << endl;
+        cout << "\nItem or user does not exist.\n";
     } if (item->getCopiesAvailable() < 1) {
-        cout << endl << "No available copies of item." << endl;
+        cout << "\nNo available copies of item.\n";
     } if (!user->canBorrow()) {
-        cout << endl << "User has reached borrowing limit" << endl;
+        cout << "\nUser has reached borrowing limit\n";
     }
     user->borrow(item);
     item->borrowCopy();
@@ -56,4 +62,15 @@ void System::borrowItem(string& userID, string& itemID) {
 //Getter for all items in library
 std::vector<Item*>& System::getItems() {
     return items;
+}
+
+void System::listItems() {
+    if (items.empty()) {
+        cout << "\nNo items in the library.\n";
+    }
+
+    cout << "\nItems in library:\n";
+    for (auto* item : items) {
+        item->getOverview();
+    }
 }

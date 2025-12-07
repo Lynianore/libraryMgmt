@@ -16,17 +16,17 @@ class Item {
     //Pure virtual function makes base class abstract
     virtual void getOverview() = 0;
 
-    //Returns title of item
+    //getters for protected variables
     std::string getTitle();
-
+    std::string getAuthor();
+    int getLength();
     std::string getID();
-
-    //Returns copies available of item
+    int getCopiesTotal();
     int getCopiesAvailable();
 
     //Add num copies of item
     void addCopies(int num);
-
+    //Reduces available copies by 1, called by System when a book is borrowed
     void borrowCopy();
 
     protected:
