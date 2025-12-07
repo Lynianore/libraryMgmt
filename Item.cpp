@@ -23,6 +23,14 @@ void Item::addCopies(int num) {
 
 void Item::borrowCopy() {
     copiesBorrowed++;
+    timesBorrowed++;
+}
+void Item::returnCopy() {
+    if (copiesBorrowed>0) {
+        copiesBorrowed--;
+    } else {
+        cout << "\nNo copies to return\n";
+    }
 }
 
 //Returns title

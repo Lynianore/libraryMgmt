@@ -48,31 +48,12 @@ User* System::findUser(const string& id) {
     return nullptr;
 }
 
-Item* System::findItem(const string& id) {
+Item* System::findItem(const string& itemID) {
     for (auto* item : items) {
-        if (item->getID() == id)
+        if (item->getID() == itemID)
             return item;
     }
     return nullptr;
-}
-
-void System::borrowItem(const string& userID, const string& itemID) {
-    User* user = findUser(userID);
-    Item* item = findItem(itemID);
-
-    if (!user || !item) {
-        cout << "\nItem or user does not exist.\n";
-        return;
-    } if (item->getCopiesAvailable() < 1) {
-        cout << "\nNo available copies of item.\n";
-        return;
-    } if (!user->canBorrow()) {
-        cout << "\nUser has reached borrowing limit\n";
-        return;
-    }
-    user->borrow(item);
-    item->borrowCopy();
-    cout << endl << user->getName() << " borrowed " << item->getTitle() << endl;
 }
 
 //Getter for all items in library

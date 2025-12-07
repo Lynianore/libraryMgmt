@@ -26,12 +26,18 @@ int main () {
     //Remove item
     staff1->removeItem(sys, "791.437");
 
-    sys.addUser(new Student("Charlton, Thomas", "S001"));
-    sys.addUser(new Student("Hagan, Julius-Joel", "S002"));
-    sys.addUser(new Student("Saludes, Borg", "S003"));
-    sys.addUser(new Student("Shahin, Eiad", "S004"));
+    User* student1 = new Student("Charlton, Thomas", "S001");
+    sys.addUser(student1);
+    User* student2 = new Student("Hagan, Julius-Joel", "S002");
+    sys.addUser(student2);
+    User* student3 = new Student("Saludes, Borg", "S003");
+    sys.addUser(student3);
+    User* student4 = new Student("Shahin, Eiad", "S004");
+    sys.addUser(student4);
 
-
-    sys.borrowItem("S002","005.117");
+    student1->borrow(sys,"005.117");
+    student2->borrow(sys,"005.117");
+    staff1->borrow(sys,"005.117");
+    student1->returnItem(sys,"005.117");
     sys.listItems();
 }

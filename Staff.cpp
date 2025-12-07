@@ -20,8 +20,7 @@ void Staff::addItem(System& system, Item* item) {
     system.addItem(item);
 }
 void Staff::removeItem(System& system, const std::string& itemID) {
-
-    Item* item = system.findItem(itemID);  // store pointer first
+    Item* item = system.findItem(itemID);
     if (!item) {
         cout << "\nItem with ID " << itemID << " not found.\n";
         return;

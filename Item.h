@@ -28,6 +28,7 @@ class Item {
     void addCopies(int num);
     //Reduces available copies by 1, called by System when a book is borrowed
     void borrowCopy();
+    void returnCopy();
 
     protected:
     std::string title;

@@ -25,8 +25,6 @@ class System {
     User* findUser(const std::string& ID);
     Item* findItem(const std::string& ID);
 
-    void borrowItem(const std::string& userID, const std::string& itemID);
-
     private:
     // Vector of pointers to Item objects
     std::vector<Item*> items;

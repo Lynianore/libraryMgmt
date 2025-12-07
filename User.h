@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 #include "Item.h"
 class System;
 
@@ -27,8 +28,9 @@ public:
     //Getter for if user can borrow
     bool canBorrow();
     //Adds item to borrowedItems vector
-    void borrow(Item* item);
-    void returnItem(const std::string& itemID);
+    void borrow(System& system, const std::string& itemID);
+    Item* findBorrowedItem(const std::string& itemID);
+    void returnItem(System& system, const std::string& itemID);
     virtual void addItem(System&, Item*) {};
     virtual void removeItem(System&, const std::string& itemID) {};
 
