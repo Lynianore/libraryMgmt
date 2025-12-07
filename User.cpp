@@ -3,11 +3,18 @@
 //
 
 #include "User.h"
+#include "Item.h"
 #include <iostream>
 using namespace std;
 
 User::User(string name, string ID) {
     this->name = name;
     this->ID = ID;
-    this->borrowLimit = 4;
+    this->borrowLimit = borrowLimit;
+}
+bool User::canBorrow() {
+    return borrowedItems.size() < borrowLimit;
+}
+void borrow (Item* item) {
+    if (canBorrow())
 }

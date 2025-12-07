@@ -15,4 +15,6 @@ add_executable(libraryManagement main.cpp
         Audiobook.cpp
         Audiobook.h
         User.cpp
-        User.h)
+        User.h
+        Student.cpp
+        Student.h)
