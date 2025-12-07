@@ -21,10 +21,10 @@ class System {
     std::vector<Item*>& getItems();
     void listItems();
 
-    User* findUser(std::string& ID);
-    Item* findItem(std::string& ID);
+    User* findUser(const std::string& ID);
+    Item* findItem(const std::string& ID);
 
-    void borrowItem(std::string& userID, std::string& itemID);
+    void borrowItem(const std::string& userID, const std::string& itemID);
 
     private:
     // Vector of pointers to Item objects

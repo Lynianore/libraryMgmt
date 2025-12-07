@@ -28,7 +28,7 @@ void System::addUser(User* user) {
     users.push_back(user);
 }
 
-User* System::findUser(string& id) {
+User* System::findUser(const string& id) {
     for (auto* user : users) {
         if (user->getID() == id)
             return user;
@@ -36,7 +36,7 @@ User* System::findUser(string& id) {
     return nullptr;
 }
 
-Item* System::findItem(string& id) {
+Item* System::findItem(const string& id) {
     for (auto* item : items) {
         if (item->getID() == id)
             return item;
@@ -44,7 +44,7 @@ Item* System::findItem(string& id) {
     return nullptr;
 }
 
-void System::borrowItem(string& userID, string& itemID) {
+void System::borrowItem(const string& userID, const string& itemID) {
     User* user = findUser(userID);
     Item* item = findItem(itemID);
 

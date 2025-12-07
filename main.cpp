@@ -1,7 +1,9 @@
-#include <iostream>
 #include "Item.h"
 #include "Book.h"
 #include "DVD.h"
+#include "Audiobook.h"
+#include "User.h"
+#include "Student.h"
 #include "System.h"
 using namespace std;
 
@@ -15,5 +17,10 @@ int main () {
     sys.addItem(new Book("Jumping into C++", "Allain, Alex", 516, "005.117", 2));
     //Add dvd to library
     sys.addItem(new DVD("Citizen Kane", "Welles, Orson", 120, "791.437", 1));
+
+    sys.addUser(new Student("Thomas Charlton", "S001"));
+    sys.addUser(new Student("Borg Saludes", "S002"));
+
+    sys.borrowItem("S001","005.117");
     sys.listItems();
 }
