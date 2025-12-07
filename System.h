@@ -7,6 +7,7 @@
 
 #include <vector>
 #include "item.h"
+#include "user.h"
 
 class System {
     public:
@@ -19,9 +20,15 @@ class System {
     //Returns vector of item pointers
     std::vector<Item*>& getItems();
 
+    User* findUser(std::string& ID);
+    Item* findItem(std::string& ID);
+
+    void borrowItem(std::string& userID, std::string& itemID);
+
     private:
     // Vector of pointers to Item objects
     std::vector<Item*> items;
+    std::vector<User*> users;
 };
 
 

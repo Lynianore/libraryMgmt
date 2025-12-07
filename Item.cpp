@@ -24,9 +24,17 @@ void Item::addCopies(int num) {
     copiesAvailable += num;
 }
 
+void Item::borrowCopy() {
+    copies--;
+}
+
 //Returns title
 string Item::getTitle() {
     return title;
+}
+
+string Item::getID() {
+    return ID;
 }
 
 //Returns copies available

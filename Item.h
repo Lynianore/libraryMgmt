@@ -19,11 +19,15 @@ class Item {
     //Returns title of item
     std::string getTitle();
 
+    std::string getID();
+
     //Returns copies available of item
     int getCopiesAvailable();
 
     //Add num copies of item
     void addCopies(int num);
+
+    void borrowCopy();
 
     protected:
     std::string title;

@@ -16,6 +16,10 @@ public:
     virtual ~User();
     //prints overview, pure virtual method makes base class abstract
     virtual void getOverview() = 0;
+
+    std::string getName();
+
+    std::string getID();
     //getter for if borrowing is possible
     bool canBorrow();
 
@@ -24,7 +28,7 @@ public:
     protected:
     std::string name;
     std::string ID;
-    std::vector<std::string> borrowedItems;
+    std::vector<Item*> borrowedItems;
 
     private:
     int borrowLimit;
