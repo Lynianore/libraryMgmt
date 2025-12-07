@@ -6,8 +6,8 @@
 #define LIBRARYMANAGEMENT_SYSTEM_H
 
 #include <vector>
-#include "item.h"
-#include "user.h"
+#include "Item.h"
+#include "User.h"
 
 class System {
     public:
@@ -16,7 +16,7 @@ class System {
 
     //Adds Item object pointer to items vector
     void addItem(Item* item);
-    void removeItem(const std::string& id);
+    bool removeItem(const std::string& id, int num);
     void addUser(User* user);
     //Returns vector of item pointers
     std::vector<Item*>& getItems();

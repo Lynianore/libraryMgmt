@@ -31,22 +31,22 @@ bool User::canBorrow() {
 void User::borrow (System& system, const string& itemID) {
     Item* item = system.findItem(itemID);
     if (!item) {
-        std::cout << "\nItem not found.\n";
+        cout << "\nItem not found.\n";
         return;
     }
 
     if (!canBorrow()) {
-        std::cout << name << " has reached borrow limit.\n";
+        cout << name << " has reached borrow limit.\n";
         return;
     }
 
     if (item->getCopiesAvailable() < 1) {
-        std::cout << "\nNo available copies of " << item->getTitle() << endl;
+        cout << "\nNo available copies of " << item->getTitle() << endl;
         return;
     }
     borrowedItems.push_back(item);
     item->borrowCopy();
-    std::cout << endl << name << " borrowed " << item->getTitle() << std::endl;
+    cout << endl << name << " borrowed " << item->getTitle() << endl;
 }
 
 Item* User::findBorrowedItem(const string& itemID) {
@@ -57,19 +57,19 @@ Item* User::findBorrowedItem(const string& itemID) {
     return nullptr;
 }
 
-void User::returnItem(System& system, const std::string& itemID) {
+void User::returnItem(System& system, const string& itemID) {
     // Find the item in the user's borrowed list
     Item* item = findBorrowedItem(itemID);
     if (!item) {
-        std::cout << "\nNo item with the ID " << itemID << " has been borrowed by " << name;
+        cout << "\nNo item with the ID " << itemID << " has been borrowed by " << name;
         return;
     }
 
     // Remove item from borrowedItems vector
-    auto it = std::find(borrowedItems.begin(), borrowedItems.end(), item);
+    auto it = find(borrowedItems.begin(), borrowedItems.end(), item);
     if (it != borrowedItems.end()) {
         borrowedItems.erase(it);
     }
     item->returnCopy();
-    std::cout << name << " returned " << item->getTitle() << std::endl;
+    cout << endl << name << " returned " << item->getTitle() << endl;
 }

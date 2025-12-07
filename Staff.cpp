@@ -19,14 +19,15 @@ void Staff::addItem(System& system, Item* item) {
     cout << endl << getName() << " added " << item->getTitle() << endl;
     system.addItem(item);
 }
-void Staff::removeItem(System& system, const std::string& itemID) {
-    Item* item = system.findItem(itemID);
-    if (!item) {
-        cout << "\nItem with ID " << itemID << " not found.\n";
-        return;
+void Staff::removeItem(System& system, const string& itemID) {
+    if (system.removeItem(itemID, 1)) {
+        Item* item = system.findItem(itemID);
+        if (item) {
+            cout << getName() << " removed one copy of " << item->getTitle() << endl;
+        } else {
+            cout << getName() << " removed " << item->getTitle() << endl;
+        }
     }
-    cout << endl << getName() << " removed " << item->getTitle() << endl;
-    system.removeItem(itemID);
 }
 
 

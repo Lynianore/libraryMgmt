@@ -20,13 +20,24 @@ void System::addItem(Item* item) {
     items.push_back(item);
 }
 
-void System::removeItem(const string& itemID) {
+bool System::removeItem(const string& itemID, int num) {
     for (auto it = items.begin(); it != items.end(); ++it) {
-        if ((*it)->getID() == itemID) {
-            items.erase(it);
-            return;
+        Item* item = *it;
+        if (item->getID() == itemID) {
+            if (item->getCopiesAvailable() == 0) {
+                cout << "\nAll copies are currently being borrowed\n";
+                return false;
+            }
+            if (item->getCopiesTotal() == 1) {
+                items.erase(it);
+                return false;
+            }
+            item->removeCopies(1);
+            return true;
         }
     }
+    cout << "\nNo item found with ID " << itemID << endl;
+    return false;
 }
 
 void System::addUser(User* user) {
@@ -57,7 +68,7 @@ Item* System::findItem(const string& itemID) {
 }
 
 //Getter for all items in library
-std::vector<Item*>& System::getItems() {
+vector<Item*>& System::getItems() {
     return items;
 }
 

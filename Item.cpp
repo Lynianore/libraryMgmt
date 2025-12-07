@@ -20,6 +20,9 @@ Item::Item(string title, string author, int length, string ID, int copies) {
 void Item::addCopies(int num) {
     copies += num;
 }
+void Item::removeCopies(int num) {
+    copies -= num;
+}
 
 void Item::borrowCopy() {
     copiesBorrowed++;

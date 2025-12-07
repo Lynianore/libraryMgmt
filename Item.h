@@ -13,10 +13,10 @@ class Item {
     //Virtual destructor
     virtual ~Item() {};
 
-    //Pure virtual function makes base class abstract
+    //Pure virtual function makes base class abstract, different items print their overview differently
     virtual void getOverview() = 0;
 
-    //getters for protected variables
+    //getters for variables
     std::string getTitle();
     std::string getAuthor();
     int getLength();
@@ -26,6 +26,7 @@ class Item {
 
     //Add num copies of item
     void addCopies(int num);
+    void removeCopies(int num);
     //Reduces available copies by 1, called by System when a book is borrowed
     void borrowCopy();
     void returnCopy();
