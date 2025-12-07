@@ -10,12 +10,13 @@ System::System() {}
 void System::addItem(Item* item) {
     //Checks if item is already presents, increases number of copies and deletes the item it would've added otherwise
     for (auto& it : items) {
-        if (it->getTitle() == item->getTitle()) {
+        if (it->getID() == item->getID()) {
             it->addCopies(item->getCopiesAvailable());
             delete item;
+            return;
         }
     }
-    //If item isn't already pressent simply adds item to vector
+    //If item isn't already present simply adds item to vector
     items.push_back(item);
 }
 
@@ -23,6 +24,8 @@ void System::addUser(User* user) {
     for (auto& us : users) {
         if (us->getName() == user->getName()) {
             delete user;
+            cout << "\n User already exists\n";
+            return;
         }
     }
     users.push_back(user);
@@ -50,13 +53,17 @@ void System::borrowItem(const string& userID, const string& itemID) {
 
     if (!user || !item) {
         cout << "\nItem or user does not exist.\n";
+        return;
     } if (item->getCopiesAvailable() < 1) {
         cout << "\nNo available copies of item.\n";
+        return;
     } if (!user->canBorrow()) {
         cout << "\nUser has reached borrowing limit\n";
+        return;
     }
     user->borrow(item);
     item->borrowCopy();
+    cout << endl << user->getName() << " borrowed " << item->getTitle() << endl;
 }
 
 //Getter for all items in library

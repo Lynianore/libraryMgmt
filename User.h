@@ -8,6 +8,7 @@
 #include <vector>
 #include <iostream>
 #include "Item.h"
+class System;
 
 class User {
 public:
@@ -27,6 +28,7 @@ public:
     bool canBorrow();
     //Adds item to borrowedItems vector
     void borrow (Item* item);
+    virtual void addItem(System&, Item*) {};
 
     protected:
     std::string name;

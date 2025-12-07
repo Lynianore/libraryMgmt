@@ -21,5 +21,5 @@ void Audiobook::getOverview() {
     cout << "\nLength: " << length << " minutes";
     cout << "\nDewey Decimal ID: " << ID;
     cout << "\nTotal copies: " << copies;
-    cout << "\nAvailable copies: " << copiesAvailable << endl;
+    cout << "\nAvailable copies: " << getCopiesAvailable() << endl;
 }

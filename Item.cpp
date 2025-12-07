@@ -13,14 +13,12 @@ Item::Item(string title, string author, int length, string ID, int copies) {
     this->ID = ID;
     this->copies = copies;
     this->copiesBorrowed = 0;
-    this->copiesAvailable = copies - copiesBorrowed;
     this->timesBorrowed = 0;
 }
 
 //Increases copies integer by num
 void Item::addCopies(int num) {
     copies += num;
-    copiesAvailable += num;
 }
 
 void Item::borrowCopy() {
@@ -47,5 +45,5 @@ int Item::getCopiesTotal() {
 }
 //Returns copies available
 int Item::getCopiesAvailable() {
-    return copiesAvailable;
+    return copies - copiesBorrowed;
 }

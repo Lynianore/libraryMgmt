@@ -36,7 +36,6 @@ class Item {
     //Dewey Decimal ID, type is string so that it retains zeros at the start
     std::string ID;
     int copies;
-    int copiesAvailable;
 
     private:
     int timesBorrowed;

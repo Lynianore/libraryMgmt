@@ -20,5 +20,5 @@ void Book::getOverview() {
     cout << "\nLength: " << length << " pages";
     cout << "\nDewey Decimal ID: " << ID;
     cout << "\nTotal copies: " << copies;
-    cout << "\nAvailable copies: " << copiesAvailable << endl;
+    cout << "\nAvailable copies: " << getCopiesAvailable() << endl;
 }

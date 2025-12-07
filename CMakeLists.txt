@@ -17,4 +17,6 @@ add_executable(libraryManagement main.cpp
         User.cpp
         User.h
         Student.cpp
-        Student.h)
+        Student.h
+        Staff.cpp
+        Staff.h)

@@ -9,7 +9,7 @@ using namespace std;
 Student::Student(string name, string ID) : User(name, ID) {
     this->name = name;
     this->ID = ID;
-    this->borrowLimit = 3;
+    this->borrowLimit = 4;
 }
 void Student::getOverview() {
     cout << "\nStudent name: " << name;
