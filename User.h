@@ -13,24 +13,29 @@ class System;
 
 class User {
 public:
-    //constructor
+    //Constructor
     User(std::string, std::string);
-    //virtual destructor
+    //Virtual destructor
     virtual ~User(){};
-    //prints overview, pure virtual method makes base class abstract
+    //Prints overview, pure virtual method makes base class abstract
     virtual void getOverview() = 0;
-    //getter for protected variables
+    //Getter for protected variables
     std::string getName();
     std::string getID();
 
-    std::vector<Item*>& getBorrowedItems();
-
-    //Getter for if user can borrow
+    //Getter for if user can borrow and for the vector of borrowed items
     bool canBorrow();
+    std::vector<Item*>& getBorrowedItems();
     //Adds item to borrowedItems vector
     void borrow(System& system, const std::string& itemID);
-    Item* findBorrowedItem(const std::string& itemID);
+    //Removes items from the borrowedItems vector
     void returnItem(System& system, const std::string& itemID);
+    //Finds item in borrowedItem vector whose ID matches the one given in the argument
+    Item* findBorrowedItem(const std::string& itemID);
+
+
+
+    //Virtual functions which will only be usable by staff to add or remove items
     virtual void addItem(System&, Item*) {};
     virtual void removeItem(System&, const std::string& itemID) {};
 

@@ -8,9 +8,13 @@
 #include "system.h"
 class Staff : public User {
     public:
+    //Constructor
     Staff(std::string, std::string);
+    //Prints an overview
     void getOverview();
+    //Adds item to library system
     void addItem(System& system, Item* item);
+    //Removes item from library system
     void removeItem(System& system, const std::string& itemID);
 };
 

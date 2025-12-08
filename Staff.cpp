@@ -16,9 +16,11 @@ void Staff::getOverview() {
     cout << "\nStaff ID number: " << ID << endl;
 }
 void Staff::addItem(System& system, Item* item) {
+    //Calls addItem with the given item via the given system and reports it in the console
     cout << endl << getName() << " added " << item->getTitle() << endl;
     system.addItem(item);
 }
+//Removes item from library system (completely if only one remains, or decrements copies by 1 if removing is successful)
 void Staff::removeItem(System& system, const string& itemID) {
     if (system.removeItem(itemID, 1)) {
         Item* item = system.findItem(itemID);
